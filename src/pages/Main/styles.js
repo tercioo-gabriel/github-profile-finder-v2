@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 150px;
+  width: 180px;
 `;
 
 export const Title = styled.h1`
@@ -38,9 +39,16 @@ export const Input = styled.input`
   margin-right: 12px;
   padding: 0 24px;
   color: ${(props) => props.theme.colors.gray100};
+
+  
+  &::placeholder {
+    color: ${(props) => props.theme.colors.gray100};
+    letter-spacing: .1rem;
+    font-size: 18px;
+    opacity: 0.85;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,4 +59,9 @@ export const Button = styled.button`
   border-radius: 15px;
   cursor: pointer;
   color: ${(props) => props.theme.colors.gray100};
+  transition: 0.15s;
+
+  &:hover {
+    filter: grayscale(15%);
+  }
 `;
