@@ -13,6 +13,7 @@ const rem = (px) => `${round(px / 16)}rem`;
 export const theme = {
   colors: {
     container: "#2d2d2d",
+    gray: "#5c5c5c",
     white: "#FFFFFF",
     black: "#0C0D0F",
     red: "#E03131",
@@ -27,6 +28,7 @@ export const theme = {
     pink: "#FE5895",
     redPink: "#ff265b",
     gray100: "#FAFAFA",
+    gray150: "#F5F5F5",
     gray200: "#E9ECEF",
     gray300: "#DEE2E6",
     gray400: "#CED4DA",
@@ -58,6 +60,7 @@ export const theme = {
   },
   breakpoints: {
     xs: '0',
+    xsm: '426px',
     sm: '576px',
     md: '768px',
     lg: '992px',

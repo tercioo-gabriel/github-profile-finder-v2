@@ -10,26 +10,21 @@ export const Container = styled.main`
 `;
 
 export const Sidebar = styled.aside`
-  background: ${(props) => props.theme.colors.gray100};
+  background: ${(props) => props.theme.colors.white};
   min-width: 10rem;
-  height: 100vh;
   overflow-y: hidden;
+  padding-bottom: 5rem;
 
-  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-    height: 100vh;
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    padding-bottom: 2rem;
   }
 `;
 
 export const Main = styled.section`
-  background: ${(props) => props.theme.colors.gray300};
+  background: ${(props) => props.theme.colors.gray200};
   width: 100%;
-  height: 100vh;
   padding: 40px;
   overflow-y: hidden;
-
-  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-    height: 100%;
-  }
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     padding: 40px 20px;

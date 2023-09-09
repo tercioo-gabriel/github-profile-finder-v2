@@ -16,9 +16,9 @@ export const Header = styled.div`
 
 export const Avatar = styled.img`
   align-items: center;
+  margin: 1rem auto;
   border-radius: 50%;
   width: 70%;
-  margin-bottom: 1rem;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 25%;
@@ -27,29 +27,32 @@ export const Avatar = styled.img`
   @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     width: 110px;
     height: 110px;
-    margin-right: 1rem;
-    margin-bottom: 0;
+    margin: 0 auto;
   }  
 `;
 
 export const Login = styled.h1`
   font-size: 25px;
+  margin-top: 5px;
 `;
 
-export const LoginInfo = styled.p`
-  font-size: 16px;
+export const Name = styled.h2`
+  font-size: ${(props) => props.theme.fontSize.base};
   font-weight: normal;
   line-height: 0.01;
+  margin-top: 0;
 `;
 
 export const Inner = styled.div`
-  padding: ;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media screen and (min-width: ${(props) => props.theme.breakpoints.md}) {
     align-items: flex-start;
+  }
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.xsm}) {
+    display: none;
   }  
 `;
 

@@ -1,38 +1,58 @@
 import React from "react";
-
+import PropTypes from 'prop-types';
 import { MdGroup, MdLocationCity, MdWork, MdLink } from 'react-icons/md';
 
-import { Container, Header, Avatar, Login, LoginInfo, Inner, Data } from "./styles";
+import { Container, Header, Avatar, Login, Name, Inner, Data } from "./styles";
 
-export default function Profile() {
+export default function Profile({ user }) {
   return (
     <Container>
       <Header>
-        <Avatar src="https://avatars.githubusercontent.com/u/55540536?v=4" />
-        <Login>Oi Tércio Gabriel</Login>
-        <LoginInfo>Vovis 293</LoginInfo>
+        <Avatar src={user.avatar_url} />
+        <Login>{user.login}</Login>
+        <Name>{user.name}</Name>
         
       </Header>
       <Inner>
+        
         <Data>
           <MdGroup size={20} /> 
-          30&nbsp;<i>seguidores</i>&nbsp;&middot;&nbsp;10&nbsp;<i>seguindo</i>
+          {user.followers}&nbsp;<i>seguidores</i>&nbsp;&middot;&nbsp;{user.following}&nbsp;<i>seguindo</i>
         </Data>
 
-        <Data>
-          <MdWork size={20} /> Dev Samurai
-        </Data>
+        {user.company && (
+          <Data>
+            <MdWork size={20} />{user.company}
+          </Data>
+        )}
 
-        <Data>
-          <MdLocationCity size={20} />Brasil brasil
-        </Data>
+        {user.location && (
+          <Data>
+            <MdLocationCity size={20} />{user.location}
+          </Data>
+        )}
 
-        <Data>
-          <MdLink size={20} />
-          <a href="https://www.youtube.com">youtube.com</a>
-        </Data>
+        {user.blog && (
+          <Data>
+            <MdLink size={20} />
+            <a href={`\\${user.blog}`}>{user.blog}</a>
+          </Data>
+        )}
 
       </Inner>
     </Container>
   );
 }
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+    login: PropTypes.string.isRequired,
+    avatar_url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    followers: PropTypes.number.isRequired,
+    following: PropTypes.number.isRequired,
+    company: PropTypes.string,
+    blog: PropTypes.string,
+    location: PropTypes.string,
+  }).isRequired,
+};
