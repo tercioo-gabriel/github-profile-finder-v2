@@ -4,9 +4,9 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 0 auto;
 
-  @media screen and (max-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.xl}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

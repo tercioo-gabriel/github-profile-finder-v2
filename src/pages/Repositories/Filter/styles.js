@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid
   grid-template-columns: auto auto;
   margin: 1rem auto;
-  padding-right: 2rem;
+  padding-right: 1rem;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     grid-template-columns: auto;
@@ -17,7 +17,7 @@ export const Selector = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: ${(props) => props.theme.colors.gray150};
+  background: ${(props) => props.theme.colors.container};
   color: ${(props) => props.color || props.theme.colors.gray100};
   width: 100%;
   min-height: 2rem;
@@ -30,11 +30,8 @@ export const Selector = styled.button`
 
   &:hover, &.selected{
     background: ${(props) => props.color || props.theme.colors.redPink};
-    transform: translateX(5px) scale(1.04);
-  }
-
-  &:hover{ 
     color: ${(props) => props.theme.colors.gray100};
+    transform: translateX(5px) scale(1.04);
   }
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}){
@@ -43,13 +40,12 @@ export const Selector = styled.button`
     &:hover, &.selected{
       transform: translateX(0) scale(1.02);
     }
-  }
 `;
 
 export const Cleaner = styled.button`
   background: transparent;
-  color: ${(props) => props.theme.colors.container};
-  background: ${(props) => props.theme.colors.gray150};
+  color: ${(props) => props.theme.colors.gray200};
+  background: ${(props) => props.theme.colors.container};
   border: none;
   border-radius: 0 20px 20px 0;
   text-align: center;

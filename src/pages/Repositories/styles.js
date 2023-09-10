@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const Loading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-heiht: 100vh;
+`;
+
 export const Container = styled.main`
   display: flex;
   min-height: 100vh;
@@ -10,8 +17,8 @@ export const Container = styled.main`
 `;
 
 export const Sidebar = styled.aside`
-  background: ${(props) => props.theme.colors.white};
-  min-width: 10rem;
+  background: ${(props) => props.theme.colors.gray950};
+  min-width: 280px;
   overflow-y: hidden;
   padding-bottom: 5rem;
 
@@ -21,8 +28,7 @@ export const Sidebar = styled.aside`
 `;
 
 export const Main = styled.section`
-  background: ${(props) => props.theme.colors.gray200};
-  width: 100%;
+  background: ${(props) => props.theme.colors.container};
   padding: 40px;
   overflow-y: hidden;
 

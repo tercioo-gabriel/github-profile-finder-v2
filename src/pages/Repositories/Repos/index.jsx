@@ -1,17 +1,39 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import Repository from "./Repository";
 
 import { Container } from "./styles";
 
-export default function Repos(){
+export default function Repos({repositories, currentLanguage}){
+
+  const repos = repositories.filter((repository) => currentLanguage === undefined || repository.language === currentLanguage).map((repository) => (
+    <Repository
+      key={repository.id}
+      repository={repository}
+    />
+  ));
+
   return(
     <Container>
-      <Repository />
-      <Repository />
-      <Repository />
-      <Repository />
-      <Repository />
+      {repos}
     </Container>
   );
-}
+};
+
+Repos.defaultProps = {
+  currentLanguage: undefined,
+};
+
+Repos.propTypes = {
+  repositories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      html_url: PropTypes.string.isRequired,
+      language: PropTypes.string,
+    }).isRequired
+  ).isRequired,
+  currentLanguage: PropTypes.string,
+};

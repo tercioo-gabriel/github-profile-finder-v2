@@ -7,6 +7,10 @@ const api = axios.create({
 
 export default api;
 
+export const getUser = async (login) => api.get(`/users/${login}`);
+
+export const getRepos = async (login) => api.get(`/users/${login}/repos`);
+
 export const getLangsFrom = (repositories) => {
   let stats = repositories.map((repository) => repository.language).reduce((data, language) => ({
     ...data,

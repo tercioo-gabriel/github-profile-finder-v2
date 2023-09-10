@@ -14,6 +14,7 @@ export const theme = {
   colors: {
     container: "#2d2d2d",
     gray: "#5c5c5c",
+    gray950: '#1c1c1c',
     white: "#FFFFFF",
     black: "#0C0D0F",
     red: "#E03131",

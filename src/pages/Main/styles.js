@@ -6,6 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: ${(props) => props.theme.colors.container};
   text-align: center;
   min-height: 100vh;
   padding: 0 2rem;
@@ -17,7 +18,7 @@ export const Logo = styled.img`
 
 export const Title = styled.h1`
   font-size: 2.2rem;
-  color: ${(props) => props.theme.colors.redPink};
+  color: ${(props) => props.theme.colors.gray100};
 `;
 
 export const Form = styled.div`
@@ -39,7 +40,7 @@ export const Input = styled.input`
   margin-right: 12px;
   padding: 0 24px;
   color: ${(props) => props.theme.colors.gray100};
-
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   
   &::placeholder {
     color: ${(props) => props.theme.colors.gray100};
@@ -59,9 +60,11 @@ export const Button = styled(Link)`
   border-radius: 15px;
   cursor: pointer;
   color: ${(props) => props.theme.colors.gray100};
-  transition: 0.15s;
+  transition: 0.2s;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    filter: grayscale(15%);
+    transform: scale(1.05);
+    color: ${(props) => props.theme.colors.container};
   }
 `;
