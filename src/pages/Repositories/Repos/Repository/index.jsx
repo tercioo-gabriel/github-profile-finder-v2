@@ -12,7 +12,7 @@ export default function Repository({repository}){
   return(
     <Container color={color}>
       <Name>{repository.name}</Name>
-      <Description>{repository.description}</Description>
+      <Description>{repository.description || '* Sem descrição'}</Description>
       <Footer color={color}>
         <Lang>{repository.language}</Lang>
         <Link href={repository.html_url} target="_blank">Ver</Link>

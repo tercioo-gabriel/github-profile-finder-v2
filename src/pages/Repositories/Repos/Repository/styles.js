@@ -18,6 +18,7 @@ export const Name = styled.h3`
 
 export const Description = styled.p`
   font-size: ${(props) => props.theme.fontSize.md};
+  color: ${(props) => props.theme.colors.gray500};
   line-height: 1.25;
   margin: 1rem 0;
 `;

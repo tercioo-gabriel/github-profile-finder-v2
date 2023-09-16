@@ -19,8 +19,13 @@ export const Container = styled.main`
 export const Sidebar = styled.aside`
   background: ${(props) => props.theme.colors.gray950};
   min-width: 280px;
+  max-width: 280px;
   overflow-y: hidden;
   padding-bottom: 5rem;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    min-width: 100%;
+  }
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     padding-bottom: 2rem;
@@ -28,6 +33,7 @@ export const Sidebar = styled.aside`
 `;
 
 export const Main = styled.section`
+  flex: 1;
   background: ${(props) => props.theme.colors.container};
   padding: 40px;
   overflow-y: hidden;

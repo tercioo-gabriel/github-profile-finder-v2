@@ -18,7 +18,8 @@ export const Logo = styled.img`
 
 export const Title = styled.h1`
   font-size: 2.2rem;
-  color: ${(props) => props.theme.colors.gray100};
+  color: ${(props) => props.theme.colors.redPink};
+  text-shadow: .75px .75px .9px rgba(256, 256, 256, 0.5);
 `;
 
 export const Form = styled.div`
@@ -35,7 +36,8 @@ export const Input = styled.input`
   height: 65px;
   line-height: 64px;
   border: none;
-  border-radius: 15px;
+  outline: 0;
+  border-radius: 7px;
   font-size: 24px;
   margin-right: 12px;
   padding: 0 24px;
@@ -43,8 +45,7 @@ export const Input = styled.input`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   
   &::placeholder {
-    color: ${(props) => props.theme.colors.gray100};
-    letter-spacing: .1rem;
+    color: ${(props) => props.theme.colors.container};
     font-size: 18px;
     opacity: 0.85;
 `;
@@ -57,14 +58,14 @@ export const Button = styled(Link)`
   width: 80px;
   height: 64px;
   border: none;
-  border-radius: 15px;
+  border-radius: 7px;
   cursor: pointer;
-  color: ${(props) => props.theme.colors.gray100};
+  color: ${(props) => props.theme.colors.container};
   transition: 0.2s;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
   &:hover {
     transform: scale(1.05);
-    color: ${(props) => props.theme.colors.container};
+    color: ${(props) => props.theme.colors.gray100};
   }
 `;
